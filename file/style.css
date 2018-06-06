@@ -1,0 +1,245 @@
+html, body {
+    background-color: #A9B9E8 /*#668f99*/;
+    margin: 0 auto;
+    width: 100%;
+    height: 100%;
+}
+
+img {
+    height: 3%;
+}
+
+.lista {
+    margin-left: 1%;
+    color: white;
+    text-decoration: none;
+}
+
+.lista:hover {
+    color: black;
+    text-decoration: none;
+}
+
+.navbar, .barra {
+    background-color: #3160E1;
+}
+
+/*9DA5B6*/
+
+.form-group {
+    margin-left: 5%;
+    margin-top: 5%;
+}
+
+.index{
+    width: 100%;
+    margin-left: 28%;
+    margin-top: 5%;
+}
+
+
+.form-group .metto {
+    width: 40%;
+    height: 6%;
+}
+
+.form-group .metto2 {
+    width: 100%;
+    height: 5%;
+}
+
+.form-horizontal {
+    margin-top: 6%;
+    margin-left: 42%;
+}
+
+.form-horizontal .secondo {
+
+    margin-top: 10%;
+}
+
+#titolo {
+    color: black;
+    font-size: 125%;
+    text-align: center;
+
+}
+
+.grande {
+    width: 100%;
+    height: 88%;
+
+}
+
+.login {
+    width: 50%;
+    margin: auto;
+    border: 1px solid gray;
+    height: 88%;
+}
+
+.registrati {
+    width: 50%;
+    margin: auto;
+    height: 80%;
+    border: 1px solid black;
+}
+
+/*------------------------------------------------------------------------------------------------------------------*/
+.tabella {
+    /*width: 50%;*/
+    height: 100%;
+    margin: auto;
+
+    color: white;
+    width: 100%;
+}
+
+.cont {
+    /*background-color: yellow;*/
+    width: 20%;
+    float: left;
+    border-left: 1px solid blue;
+    /*border-bottom: 1px solid yellow;*/
+    height: 100%;
+}
+
+.contpaddig {
+    padding: 40px;
+    width: 80%;
+    height: 100%;
+}
+
+.blocco {
+    width: 100%;
+    height: 92%;
+    float: left;
+}
+
+.form-control {
+    width: 40%;
+}
+
+textarea {
+    min-width: 100%;
+    resize: none;
+    background-color: #1E9E6D;
+    border: 1px solid #DDDDDD;
+    border-radius: 3px 3px 3px 3px;
+    box-shadow: 1px 1px 3px #EEEEEE inset;
+    color: black;
+    font-size: 1.8rem;
+    font-family: Cambria, Georgia, Times, 'Times New Roman', serif;
+    padding: 1.6rem;
+
+}
+
+tbody {
+    display: block;
+    height: 92%;
+    overflow: auto;
+}
+
+thead, tbody tr {
+    display: table;
+    width: 100%; /*400*/
+    table-layout: fixed;
+
+}
+
+.check1 {
+    color: green;
+}
+
+.check2 {
+    color: red;
+
+}
+
+.stampe {
+    height: 6%;
+    font-size: 100%;
+    margin: auto;
+    background-color: white;
+}
+
+.alert {
+    width: 100%;
+    /*margin: auto;*/
+    /*height: 20%;*/
+    font-size: 89%;
+
+}
+
+.btn {
+    font-size: 80%;
+    height: auto;
+}
+
+.x {
+    display: inline-block;
+    float: right;
+}
+
+.cerca {
+    margin-left: 19%;
+}
+
+.indexStampe {
+    margin-left: 31%;
+    color: red;
+}
+
+.registrato {
+    color: green;
+}
+
+
+/* -------------------------------------------- AMICI ---------------------------------------------- */
+
+.generale {
+    width: 100%;
+    height: 92%;
+    float: left;
+}
+
+.invio {
+    width: 40%;
+    height: 50%;
+    background-color: crimson;
+    float: left;
+}
+
+.richieste {
+    width: 40%;
+    height: 100%;
+    background-color: darkkhaki;
+    float: left;
+}
+
+.friends {
+    width: 20%;
+    height: 100%;
+    background-color: darkred;
+    float: left;
+}
+
+.titolo {
+    color: white;
+    text-align: center;
+    margin-top: 2%;
+}
+
+ .invia {
+    margin-left: 42%;
+}
+
+.inlinea {
+    display: inline-block;
+}
+
+.rich {
+    width: 50%;
+    /*background-color: #A9B9E8;*/
+    margin-left: 25%;
+}

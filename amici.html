@@ -1,0 +1,84 @@
+<html ng-app="myApp">
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="./file/style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+    <script src="src/amiciController.js"></script>
+</head>
+
+<body ng-controller="amiciController">
+
+<nav class="navbar navbar-expand-sm">
+    <a class="navbar-brand" href="index.html"><img src="./foto/user.png" alt="Logo" class="rounded"> </a>
+    <a href="profilo.html" class="lista">Benvenuto, {{nome}}</a>
+    <a href="amici.html" class="lista">Amici</a>
+    <a href="" ng-click="esci()" class="lista">Esci</a>
+    </form>
+
+</nav>
+<div class="generale">
+
+    <div class="invio">
+        <h2 class="titolo">Invia</h2>
+        <div class="form-group invia">
+            <label >Cerca utente:</label>
+            <input type="text" class="form-control" placeholder="utente" ng-model="utente">
+            <br>
+            <button href="" ng-click="cerca()" class="btn btn-primary">Invia</button>
+            <br>
+            <p  ng-show="errore!=''">{{errore}}</p>
+            <p  ng-show="mandata">Richiesta mandata</p>
+        </div>
+    </div>
+
+    <div class="richieste">
+        <h2 class="titolo">Richieste</h2>
+        <div class="rich">
+            <table class="table table-sm table-dark table-bordered table-hover table-striped  table-fixedheader ">
+                <thead>
+                <tr>
+                    <th>Utente</th>
+
+                </tr>
+                </thead>
+                <tbody>
+                <tr ng-repeat="x in req">
+                    <td>{{x.utente1}}</td>
+                    <th><button onClick="window.location.reload();"  ng-click="accetta(x,x.utente1)" class="btn btn-primary inlinea">Accetta</button></th>
+                    <th><button onClick="window.location.reload();"  ng-click="rifiuta(x,x.utente1)" class="btn btn-primary inlinea">Rifiuta</button></th>
+                </tr>
+                </tbody>
+
+            </table>
+            <!--<p class="inlinea">{{x.utente1}}</p>
+            <button href="" ng-click="" class="btn btn-primary inlinea">Accetta</button>
+            <button href="" ng-click="" class="btn btn-primary inlinea">Rifiuta</button>-->
+
+        </div>
+    </div>
+
+    <div class="friends">
+        <h2 class="titolo">Lista amici</h2>
+        <table class="table table-sm table-dark table-bordered table-hover table-striped table-condensed table-fixedheader ">
+            <thead>
+            <tr>
+                <th>Nome</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr ng-repeat="x in list">
+                <td>{{x.utente2}}</td>
+                <td><button onClick="window.location.reload();"  ng-click="elimina(x,x.utente2)" class="btn btn-primary inlinea">Rimuovi</button></td>
+            </tr>
+            </tbody>
+
+        </table>
+    </div>
+
+</div>
+</body>
+</html>

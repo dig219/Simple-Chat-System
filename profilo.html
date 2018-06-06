@@ -1,0 +1,124 @@
+<html ng-app="myApp">
+<head>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css"
+          integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="./file/style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+    <script src="src/profiloController.js"></script>
+</head>
+
+<body ng-controller="profiloController" ng-init="stampaMessaggi()">
+
+<!----------------------------------------------- MENU ------------------------------------------------------------------->
+<nav class="navbar navbar-expand-sm">
+    <a ng-click="esci()" class="navbar-brand"> <img src="./foto/user.png" alt="Logo class=" rounded"> </a>
+    <a href="profilo.html" class="lista">Benvenuto, {{nome}}</a>
+    <a href="amici.html" class="lista">Amici</a>
+    <a href="" ng-click="esci()" class="lista">Esci</a>
+
+</nav>
+
+<!----------------------------------------------- INVIO MESSAGGI ---------------------------------------------------------->
+
+<div class="blocco">
+    <div class="cont">
+        <div class="form-group ">
+            <label class="control-label col-sm-2">Destinatario:</label>
+            <div class="col-sm-10">
+                <input type="text" autocomplete="false" class="form-control metto2" ng-model="destinatario"
+                       placeholder="Destinatario">
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label col-sm-2">Messaggio:</label>
+            <div class="col-sm-10">
+                <!--<input type="text" autocomplete="false" class="form-control metto2" ng-model="messaggio"
+                       placeholder="messaggio">-->
+                <textarea class="form-control textarea is-medium" placeholder="Messaggio" ng-model="messaggio"
+                          rows="5"></textarea>
+
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-sm-offset-2 col-sm-10">
+                <button href="profilo.html" ng-click="manda()" class="btn btn-primary">MANDA</button>
+            </div>
+            <br>
+
+            <!--<p class="check1" ng-show="invioCorretto">Messaggio mandato!</p>
+            <p class="check2" ng-show="invioNonCorretto">Messaggio non mandato!</p>-->
+            <p ng-show="m">Campi mancanti!</p>
+
+        </div>
+        <div ng-show="invioNonCorretto" class="alert alert-danger alert-dismissible fade show">Messaggio non mandato
+            :(
+        </div>
+        <!--<div ng-show="invioCorretto" class="alert alert-success fade show">Messaggio mandato :)</div>
+        <div ng-show="amici" class="alert alert-success fade show">Non siete amici</div>-->
+        <p class="indexStampe" ng-show="errore!=''">{{errore}}</p>
+        <p class="check1" ng-show="invioCorretto">Messaggio mandato!</p>
+</div>
+
+
+    <!-----------------------------------------------TABELLA------------------------------------------------------------------->
+
+
+    <div class="cont contpaddig">
+        <button class="stampe" ng-click="stampa('inviati')">Inviati</button>
+        <button class="stampe" ng-click="stampa('ricevuti')">Ricevuti</button>
+        <p class="x" ng-show="inv">Messaggi inviati</p>
+        <p class="x" ng-show="ric">Messaggi ricevuti</p>
+        <input class="cerca" type="text" ng-model="filtro">
+        <!--<p id="titolo">Messaggi</p>-->
+
+        <table ng-show="ric"
+               class="table table-sm table-dark table-bordered table-hover table-striped table-condensed table-fixedheader tabella">
+            <thead>
+            <tr>
+                <th scope="col">Mittente</th>
+                <th scope="col">Testo</th>
+                <!--<th scope="col">Destinatario</th>-->
+                <th scope="col">Data</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr ng-repeat="x in messaggi | filter : filtro">
+                <!--<td ng-if="x.utente1 != NULL">{{x.utente1}}</td>-->
+                <td ng-if="x.testo != NULL">{{x.utente1}}</td>
+                <td ng-if="x.utente2 != NULL">{{x.testo}}</td>
+                <td ng-if="x.dataora != NULL">{{x.dataora}}</td>
+            </tr>
+            </tbody>
+        </table>
+
+        <table ng-show="inv"
+               class="table table-sm table-dark table-bordered table-hover table-striped table-condensed table-fixedheader tabella">
+            <thead>
+            <tr>
+                <!--<th scope="col">Mittente</th>-->
+                <th scope="col">Destinatario</th>
+                <th scope="col">Testo</th>
+                <th scope="col">Data</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr ng-repeat="x in messaggi | filter : filtro">
+                <!--<td ng-if="x.utente1 != NULL">{{x.utente1}}</td>-->
+                <td ng-if="x.testo != NULL">{{x.utente2}}</td>
+                <td ng-if="x.utente2 != NULL">{{x.testo}}</td>
+                <td ng-if="x.dataora != NULL">{{x.dataora}}</td>
+            </tr>
+            </tbody>
+        </table>
+
+    </div>
+
+</div>
+</body>
+</html>
