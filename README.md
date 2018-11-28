@@ -1,4 +1,4 @@
-# DIG---Simple-Chat-System
+# DIG - Simple Chat System
 DIG - Simple Chat System
 
 #doneitforfun
@@ -9,5 +9,5 @@ Functionalities:
 - Removing friend
 - Sending messagges to your friends
 
--- work in progress --
+#notmaintened
 
